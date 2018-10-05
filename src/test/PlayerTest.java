@@ -30,5 +30,12 @@ public class PlayerTest {
         snoop.points = 40;
         snoop.currentRoll = Optional.of(new DiceRoll(2,2));
         assert(snoop.didWin());
+
+        // Test af at dobbel sekser to gange giver sejr
+        snoop.points = 3;
+        snoop.currentRoll = Optional.of(new DiceRoll(6,6));
+        snoop.lastRoll = Optional.of(new DiceRoll(6,6));
+        assert(snoop.didWin());
+
     }
 }
