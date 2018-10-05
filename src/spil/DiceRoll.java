@@ -17,4 +17,8 @@ public class DiceRoll {
                " to their total score." +
                " Player " + playerNum + "'s total score is now " + currentTotal + ".";
     }
+
+    public boolean isDoubles() {
+        return rolla == rollb;
+    }
 }

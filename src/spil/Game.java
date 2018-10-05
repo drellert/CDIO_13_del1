@@ -11,6 +11,9 @@ public class Game {
 
         System.out.println("Press enter to roll the dice.");
 
+        boolean explainDoubles = false;
+
+        //Der spilles i en do...while loop, som kører indtil en af spillerne vinder
         do {
             input.nextLine();
 
@@ -21,12 +24,19 @@ public class Game {
 
             //Player 2's tur
             player2.roll(2);
+
+            //Hvis en af spillerne overskrider 40 point, forklarer spillet at vedkommende skal slå to ens for at vinde
+            if (!explainDoubles && (player1.points >= 40 || player2.points >= 40)) {
+                    System.out.println("A player has reached 40 points or more. In order to win, they must roll doubles.");
+                    explainDoubles = true;
+            } else {}
         } while (!player1.didWin() && !player2.didWin());
 
+        //Der tjekkes hvilken spiller har vundet og spilleren lykønskes
         if (player1.didWin()) {
             System.out.println("Congratulations! Player 1 won the game with " + player1.points + " points.");
-        } else {
+        } else if (player2.didWin()) {
             System.out.println("Congratulations! Player 2 won the game with " + player2.points + " points.");
-        }
+        } else {}
     }
 }
