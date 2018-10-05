@@ -13,6 +13,7 @@ public class Game {
 
         boolean explainDoubles = false;
 
+        //Der spilles i en do...while loop, som kører indtil en af spillerne vinder
         do {
             input.nextLine();
 
@@ -31,10 +32,11 @@ public class Game {
             } else {}
         } while (!player1.didWin() && !player2.didWin());
 
+        //Der tjekkes hvilken spiller har vundet og spilleren lykønskes
         if (player1.didWin()) {
             System.out.println("Congratulations! Player 1 won the game with " + player1.points + " points.");
-        } else {
+        } else if (player2.didWin()) {
             System.out.println("Congratulations! Player 2 won the game with " + player2.points + " points.");
-        }
+        } else {}
     }
 }
