@@ -15,7 +15,7 @@ public class Player {
 
         points += lastroll.get().getValue();
 
-        // System.out.println(lastroll.get().toString(points));
+         System.out.println(lastroll.get().toString(points));
     }
 
     public boolean didWin() {

@@ -12,8 +12,8 @@ public class DiceRoll {
         return rolla + rollb;
     }
 
-//    public String toString(int currentTotal) {
-//        return "You rolled a " + rolla + " and a " + rollb + ". This adds " + getValue() + " to your total score." +
-//               "Your total score is now " + currentTotal + ".";
-//    }
+    public String toString(int currentTotal) {
+        return "You rolled a " + rolla + " and a " + rollb + ". This adds " + getValue() + " to your total score." +
+               "Your total score is now " + currentTotal + ".";
+    }
 }
