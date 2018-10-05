@@ -1,7 +1,6 @@
-import spil.DiceRoll;
+package spil;
 
 import java.util.Optional;
-package spil;
 
 public class Player {
     int points = 0; //Sætter antal point til 0
