@@ -3,40 +3,55 @@ package spil;
 import java.util.Scanner;
 
 public class Game {
+    
+    public static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Player player1 = new Player();
-        Player player2 = new Player();
-        Scanner input = new Scanner(System.in);
+        Player[] players = {new Player(), new Player()};
+        int turnIndex = 0;
 
-        System.out.println("Press enter to roll the dice.");
+        System.out.println("Roll two dice and the value of your roll will be added to your total score. Aim for 40 point. Press enter to roll");
 
         boolean explainDoubles = false;
 
 //      Der spilles i en do...while loop, som kører indtil en af spillerne vinder
         do {
+//            Sæt player til at være spilleren fra spiller listen ved nuværende tur indeks.
+            Player player = players[turnIndex];
+
+//            Sørg for at spilleren trykker på enter for at give en følelse af pride and accomplishment.
             input.nextLine();
 
-//          Player 1's tur:
-            player1.roll(1);
-
-            input.nextLine();
-
-//          Player 2's tur
-            player2.roll(2);
-
+//            Slå for spiller med nummer turnIndex + 1.
+            player.roll(turnIndex + 1);
+            
 //          Hvis en af spillerne overskrider 40 point, forklarer spillet at vedkommende skal slå to ens for at vinde
-            if (!explainDoubles && (player1.points >= 40 || player2.points >= 40)) {
+            if (!explainDoubles && player.points >= 40) {
                     System.out.println("A player has reached 40 points or more. In order to win, they must roll doubles.");
                     explainDoubles = true;
-            } else {}
-        } while (!player1.didWin() && !player2.didWin());
+            }
 
-//      Der tjekkes hvilken spiller har vundet og spilleren lykønskes
-        if (player1.didWin()) {
-            System.out.println("Congratulations! Player 1 won the game with " + player1.points + " points.");
-        } else if (player2.didWin()) {
-            System.out.println("Congratulations! Player 2 won the game with " + player2.points + " points.");
-        } else {}
+//            Hvis denne spillers sidste slag ikke er en double, skift spiller indekset så den næste får tur
+            if (!player.lastroll.get().isDoubles()) {
+                turnIndex++;
+                if (turnIndex == players.length) turnIndex = 0;
+            }
+        } while (!didAnyPlayerWin(players));
+
+//        Tjek alle spillere igennem, og find den der vandt.
+        for (var i = 0; i < players.length; i++) {
+            Player p = players[i];
+            if (p.didWin()) {
+                System.out.println("Congratulations! Player " + i + " won the game with " + p.points + " points.");
+            }
+        }
+    }
+    
+    public static boolean didAnyPlayerWin(Player[] players) {
+//        For alle players i listen player, tjek om de har vundet, ellers retuner false.
+        for (Player p: players) {
+            if (p.didWin()) return true;
+        }
+        return false;
     }
 }
