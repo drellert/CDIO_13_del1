@@ -7,4 +7,8 @@ public class DiceRoll {
         rolla = rollA;
         rollb = rollB;
     }
+
+    public int getValue() {
+        return rolla + rollb;
+    }
 }
