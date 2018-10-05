@@ -9,30 +9,31 @@ public class Game {
         Player player2 = new Player();
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Press enter to roll the dice.");
+        System.out.println("Roll two dice and the value of your roll will be added to your total score. Aim for 40 point. "
+                           + "\nPress enter to roll the dice.");
 
         boolean explainDoubles = false;
 
-        //Der spilles i en do...while loop, som kører indtil en af spillerne vinder
+//      Der spilles i en do...while loop, som kører indtil en af spillerne vinder
         do {
             input.nextLine();
 
-            //Player 1's tur:
+//          Player 1's tur:
             player1.roll(1);
 
             input.nextLine();
 
-            //Player 2's tur
+//          Player 2's tur
             player2.roll(2);
 
-            //Hvis en af spillerne overskrider 40 point, forklarer spillet at vedkommende skal slå to ens for at vinde
+//          Hvis en af spillerne overskrider 40 point, forklarer spillet at vedkommende skal slå to ens for at vinde
             if (!explainDoubles && (player1.points >= 40 || player2.points >= 40)) {
                     System.out.println("A player has reached 40 points or more. In order to win, they must roll doubles.");
                     explainDoubles = true;
             } else {}
         } while (!player1.didWin() && !player2.didWin());
 
-        //Der tjekkes hvilken spiller har vundet og spilleren lykønskes
+//      Der tjekkes hvilken spiller har vundet og spilleren lykønskes
         if (player1.didWin()) {
             System.out.println("Congratulations! Player 1 won the game with " + player1.points + " points.");
         } else if (player2.didWin()) {
