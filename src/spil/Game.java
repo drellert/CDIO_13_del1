@@ -17,13 +17,13 @@ public class Game {
 
 //      Der spilles i en do...while loop, som kører indtil en af spillerne vinder
         do {
-//            Sæt player til at være spilleren fra spiller listen ved nuværende tur indeks.
+//          Sæt player til at være spilleren fra spiller listen ved nuværende tur indeks.
             Player player = players[turnIndex];
 
-//            Sørg for at spilleren trykker på enter for at give en følelse af pride and accomplishment.
+//          Sørg for at spilleren trykker på enter for at give en følelse af pride and accomplishment.
             input.nextLine();
 
-//            Slå for spiller med nummer turnIndex + 1.
+//          Slå for spiller med nummer turnIndex + 1.
             player.roll(turnIndex + 1);
             
 //          Hvis en af spillerne overskrider 40 point, forklarer spillet at vedkommende skal slå to ens for at vinde
@@ -32,14 +32,14 @@ public class Game {
                     explainDoubles = true;
             }
 
-//            Hvis denne spillers sidste slag ikke er en double, skift spiller indekset så den næste får tur
+//          Hvis denne spillers sidste slag ikke er en double, skift spiller indekset så den næste får tur
             if (!player.currentRoll.get().isDoubles()) {
                 turnIndex++;
                 if (turnIndex == players.length) turnIndex = 0;
             }
         } while (!didAnyPlayerWin(players));
 
-//        Tjek alle spillere igennem, og find den der vandt.
+//      Tjek alle spillere igennem, og find den der vandt.
         for (var i = 0; i < players.length; i++) {
             Player p = players[i];
             if (p.didWin()) {
@@ -49,7 +49,7 @@ public class Game {
     }
     
     public static boolean didAnyPlayerWin(Player[] players) {
-//        For alle players i listen player, tjek om de har vundet, ellers retuner false.
+//      For alle players i listen player, tjek om de har vundet, ellers retuner false.
         for (Player p: players) {
             if (p.didWin()) return true;
         }
