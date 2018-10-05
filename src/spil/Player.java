@@ -14,10 +14,11 @@ public class Player {
         lastroll = Optional.of(new DiceRoll(eye1,eye2));
 
         points += lastroll.get().getValue();
+
+        // System.out.println(lastroll.get().toString(points));
     }
 
     public boolean didWin() {
         return points >= 40;
     }
-
 }
