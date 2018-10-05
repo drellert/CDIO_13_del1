@@ -10,7 +10,6 @@ public class GameTest {
 
 
     @org.junit.Test
-
     // Tester om terningen er symmetrisk
     public void rollTest() {
         int tæller1 = 0;
@@ -51,5 +50,8 @@ public class GameTest {
         assertEquals(true, tæller5 > 9600 && tæller5 < 10400);
         assertEquals(true, tæller6 > 9600 && tæller6 < 10400);
     }
+
+    
+
 
 }
