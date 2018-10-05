@@ -3,8 +3,6 @@ import static org.junit.Assert.*;
 
 public class TerningespilTest {
 
-
-
     public class UseDiceTest {
 
         Terning tern = new Terning();
@@ -36,6 +34,5 @@ public class TerningespilTest {
             assertEquals(true, tæller5 > 9600 && tæller5 < 10400);
             assertEquals(true, tæller6 > 9600 && tæller6 < 10400);
         }
-
 
 }
