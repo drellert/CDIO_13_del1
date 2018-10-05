@@ -10,7 +10,8 @@ public class Game {
         Player[] players = {new Player(), new Player()};
         int turnIndex = 0;
 
-        System.out.println("Roll two dice and the value of your roll will be added to your total score. Aim for 40 point. Press enter to roll");
+        System.out.println("Roll two dice and the value of your roll will be added to your total score. Aim for 40 point. "
+                           + "\nPress enter to roll the dice.");
 
         boolean explainDoubles = false;
 

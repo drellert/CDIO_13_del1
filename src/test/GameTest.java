@@ -1,6 +1,7 @@
 package test;
 
 import spil.Dice;
+import spil.Player;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +11,6 @@ public class GameTest {
 
 
     @org.junit.Test
-
     // Tester om terningen er symmetrisk
     public void rollTest() {
         int tæller1 = 0;
