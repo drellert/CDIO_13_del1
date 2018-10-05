@@ -9,7 +9,8 @@ public class Game {
         Player player2 = new Player();
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Press enter to roll the dice.");
+        System.out.println("Roll two dice and the value of your roll will be added to your total score. Aim for 40 point. "
+                           + "\nPress enter to roll the dice.");
 
         boolean explainDoubles = false;
 
