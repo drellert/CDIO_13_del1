@@ -19,6 +19,6 @@ public class Player {
     }
 
     public boolean didWin() {
-        return points >= 40;
+        return points >= 40 && lastroll.isPresent() && lastroll.get().isDoubles();
     }
 }
