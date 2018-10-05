@@ -33,7 +33,7 @@ public class Game {
             }
 
 //            Hvis denne spillers sidste slag ikke er en double, skift spiller indekset så den næste får tur
-            if (!player.lastroll.get().isDoubles()) {
+            if (!player.currentRoll.get().isDoubles()) {
                 turnIndex++;
                 if (turnIndex == players.length) turnIndex = 0;
             }

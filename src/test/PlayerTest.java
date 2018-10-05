@@ -17,7 +17,7 @@ public class PlayerTest {
     public void didWintest() {
         Player snoop = new Player();
         snoop.points = 36;
-        snoop.lastroll = Optional.of(new DiceRoll(6,6));
+        snoop.currentRoll = Optional.of(new DiceRoll(6,6));
         assert(snoop.didWin() == false);
     }
 }
