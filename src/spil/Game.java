@@ -8,10 +8,10 @@ public class Game {
 
         do {
             //Player 1's tur:
-            player1.roll();
+            player1.roll(1);
 
             //Player 2's tur
-            player2.roll();
+            player2.roll(2);
         } while (!player1.didWin() && !player2.didWin());
 
         if (player1.didWin()) {
