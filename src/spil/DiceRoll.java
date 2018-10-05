@@ -21,4 +21,8 @@ public class DiceRoll {
     public boolean isDoubles() {
         return rolla == rollb;
     }
+
+    public boolean isSnakeeyes() {
+        return rolla == 1 && rollb == 1;
+    }
 }
