@@ -1,12 +1,24 @@
+import spil.DiceRoll;
+
+import java.util.Optional;
 package spil;
 
 public class Player {
-
-    Player player_1 = new Player(); //Opretter objektet player_1
-    Player player_2 = new Player(); //Opretter objektet player_2
-
     int points = 0; //Sætter antal point til 0
+    Optional<DiceRoll> lastroll = Optional.empty();
 
+    public void roll() {
+        Dice dice = new Dice();
+        int eye1, eye2;
+        eye1 = dice.roll();
+        eye2 = dice.roll();
+        lastroll = Optional.of(new DiceRoll(eye1,eye2));
 
+        points += lastroll.get().getValue();
+    }
+
+    public boolean didWin() {
+        return points >= 40;
+    }
 
 }
