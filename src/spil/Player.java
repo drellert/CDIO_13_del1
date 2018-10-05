@@ -2,12 +2,11 @@ package spil;
 
 public class Player {
 
-    Player player_1 = new Player();
+    Player player_1 = new Player(); //Opretter objektet player_1
+    Player player_2 = new Player(); //Opretter objektet player_2
 
-    Player player_2 = new Player();
+    int points = 0; //Sætter antal point til 0
 
-    int points = 0;
 
-    
 
 }
