@@ -1,10 +1,11 @@
 package spil;
-
+import spil.Dice;
+import spil.DiceRoll;
 import java.util.Optional;
 
 public class Player {
-    int points = 0; //Sætter antal point til 0
-    Optional<DiceRoll> lastroll = Optional.empty();
+    public int points = 0; //Sætter antal point til 0
+    public Optional<DiceRoll> lastroll = Optional.empty();
 
     public void roll(int playerNum) {
         Dice dice = new Dice();

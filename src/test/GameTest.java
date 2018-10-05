@@ -1,6 +1,7 @@
 package test;
 
 import spil.Dice;
+import spil.Player;
 
 import static org.junit.Assert.*;
 
@@ -50,8 +51,5 @@ public class GameTest {
         assertEquals(true, tæller5 > 9600 && tæller5 < 10400);
         assertEquals(true, tæller6 > 9600 && tæller6 < 10400);
     }
-
-    
-
 
 }
