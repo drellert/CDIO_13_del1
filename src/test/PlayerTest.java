@@ -23,7 +23,12 @@ public class PlayerTest {
 
         // Test at man taber ved dobbelt 1, selv om man er over de 40 points
         snoop.points = 40;
-        snoop.lastroll = Optional.of(new DiceRoll(1,1));
+        snoop.currentRoll = Optional.of(new DiceRoll(1,1));
         assert(snoop.didWin() == false);
+
+        // Test at man taber ved dobbelt slag, (ikke 1)om man er over de 40 points
+        snoop.points = 40;
+        snoop.currentRoll = Optional.of(new DiceRoll(2,2));
+        assert(snoop.didWin());
     }
 }
