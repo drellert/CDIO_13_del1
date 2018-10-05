@@ -1,6 +1,6 @@
 package spil;
 
-public class Terningespil {
+public class Game {
 
         public static void main(String[] args) {
             //
