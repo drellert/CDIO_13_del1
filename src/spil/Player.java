@@ -28,12 +28,13 @@ public class Player {
             System.out.println(currentRoll.get().toString(points, playerNum));
         }
     }
-//  Tjekker om en af spillerne er kommet over 40 point
+//  Tjekker om en af spillerne er har vundet
     public boolean didWin() {
         if (!currentRoll.isPresent()) return false;
-        if (lastRoll.isPresent()
-                && currentRoll.get() == new DiceRoll(6,6, this)
-                && lastRoll.get() == new DiceRoll(6,6, this)) {
+        DiceRoll sixRoll = new DiceRoll(6,6,this);
+        if (lastRoll.isPresent() && currentRoll.isPresent()
+                && currentRoll.get().equals(sixRoll)
+                && lastRoll.get().equals(sixRoll))  {
             System.out.println("You rolled two sixes in a row! You won!");
             return true;
         }
@@ -56,6 +57,9 @@ public class Player {
 
     public void setLastRoll(Optional<DiceRoll> to) {
         lastRoll = to;
+        if (to.isPresent()) {
+            points += to.get().getValue();
+        }
     }
 
     public Optional<DiceRoll> getCurrentRoll() {
@@ -64,5 +68,8 @@ public class Player {
 
     public void setCurrentRoll(Optional<DiceRoll> to) {
         currentRoll = to;
+        if (to.isPresent()) {
+            points += to.get().getValue();
+        }
     }
 }

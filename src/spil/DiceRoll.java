@@ -1,5 +1,7 @@
 package spil;
 
+import java.util.Optional;
+
 public class DiceRoll {
     int rolla, rollb;
     Player parent;
@@ -9,6 +11,10 @@ public class DiceRoll {
         rolla = rollA;
         rollb = rollB;
         parent = withParent;
+    }
+
+    public boolean equals(DiceRoll other) {
+        return other.getRolla() == rolla && other.getRollb() == rollb;
     }
 
 //  Returnerer den samlede værdi af spillerens to terningekast
@@ -39,5 +45,15 @@ public class DiceRoll {
         return "Player " + playerNum + " rolled a " + rolla + " and a " + rollb + ". This adds " + getValue() +
                 " to their total score." +
                 " Player " + playerNum + "'s total score is now " + currentTotal + ".";
+    }
+
+//    Getters
+
+    public int getRolla() {
+        return rolla;
+    }
+
+    public int getRollb() {
+        return rollb;
     }
 }

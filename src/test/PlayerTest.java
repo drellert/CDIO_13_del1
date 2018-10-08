@@ -28,7 +28,7 @@ public class PlayerTest {
         snoop.setCurrentRoll(Optional.of(new DiceRoll(1,1, snoop)));
         assert(snoop.didWin() == false);
 
-        // Test at man taber ved dobbelt slag, (ikke 1)om man er over de 40 points
+        // Test at man vinder ved dobbelt slag, (ikke 1)om man er over de 40 points
         snoop.setPoints(40);
         snoop.setCurrentRoll(Optional.of(new DiceRoll(2,2, snoop)));
         assert(snoop.didWin());
