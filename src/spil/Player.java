@@ -5,10 +5,10 @@ import spil.DiceRoll;
 import java.util.Optional;
 
 public class Player {
-    public int points = 0; //Sætter antal point til 0
-    public Optional<DiceRoll> lastRoll = Optional.empty();
-    public Optional<DiceRoll> currentRoll = Optional.empty();
-    public Game parent;
+    int points = 0; //Sætter antal point til 0
+    Optional<DiceRoll> lastRoll = Optional.empty();
+    Optional<DiceRoll> currentRoll = Optional.empty();
+    Game parent;
 
     public Player(Game withGame) {
         parent = withGame;
@@ -38,5 +38,31 @@ public class Player {
             return true;
         }
         return points >= (40 + currentRoll.get().getValue()) && currentRoll.get().isDoubles();
+    }
+
+//    Getters
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int to) {
+        points = to;
+    }
+
+    public Optional<DiceRoll> getLastRoll() {
+        return lastRoll;
+    }
+
+    public void setLastRoll(Optional<DiceRoll> to) {
+        lastRoll = to;
+    }
+
+    public Optional<DiceRoll> getCurrentRoll() {
+        return currentRoll;
+    }
+
+    public void setCurrentRoll(Optional<DiceRoll> to) {
+        currentRoll = to;
     }
 }
