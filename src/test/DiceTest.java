@@ -22,6 +22,6 @@ public class DiceTest {
         }
         System.out.println(doubleRoll);
 
-        assert(doubleRoll < 6100 || doubleRoll > 5900);
+        assert(doubleRoll < 6100 && doubleRoll > 5900);
     }
 }
