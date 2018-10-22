@@ -12,7 +12,7 @@ public class DiceTest {
         Dice vice = new Dice();
         int i = 0;
         int doubleRoll = 0;
-        while (i<6000){
+        while (i<60000){
             int a = vice.roll();
             int b = vice.roll();
             if (a == b){
@@ -22,6 +22,6 @@ public class DiceTest {
         }
         System.out.println(doubleRoll);
 
-        assert(doubleRoll < 6100 && doubleRoll > 5900);
+        assert((Math.abs(doubleRoll-10000)) < 1000);
     }
 }
